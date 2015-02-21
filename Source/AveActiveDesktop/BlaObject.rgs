@@ -1,0 +1,27 @@
+HKCR
+{
+	AveActiveDesktop.BlaObject.1 = s 'BlaObject Class'
+	{
+		CLSID = s '{B97AF7EC-9964-4BF8-A262-8E8BFC5C1EB9}'
+	}
+	AveActiveDesktop.BlaObject = s 'BlaObject Class'
+	{
+		CLSID = s '{B97AF7EC-9964-4BF8-A262-8E8BFC5C1EB9}'
+		CurVer = s 'AveActiveDesktop.BlaObject.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {B97AF7EC-9964-4BF8-A262-8E8BFC5C1EB9} = s 'BlaObject Class'
+		{
+			ProgID = s 'AveActiveDesktop.BlaObject.1'
+			VersionIndependentProgID = s 'AveActiveDesktop.BlaObject'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{7BFC94E6-F3EE-4C9E-8B8C-E828B9839415}'
+		}
+	}
+}

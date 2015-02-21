@@ -1,0 +1,91 @@
+// AveActiveDesktop.idl : IDL source for AveActiveDesktop
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (AveActiveDesktop.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(A03E3472-694A-4834-BC25-86533D143E7C),
+	helpstring("IAveActiveDesktopHost Interface"),
+	pointer_default(unique)
+]
+interface IAveActiveDesktopHost : IUnknown{
+	[helpstring("method SetHTMLBackground")] HRESULT SetHTMLBackground([in] BSTR urlOrFile);
+	[propget, helpstring("property IsRunning")] HRESULT IsRunning([out, retval] VARIANT_BOOL* pVal);
+};
+[
+	object,
+	uuid(1C4AE50B-88FF-4050-A05C-B1228170A481),
+	dual,
+	nonextensible,
+	helpstring("IAxWinHostWindowAggregator Interface"),
+	pointer_default(unique)
+]
+interface IAxWinHostWindowAggregator : IUnknown{
+};
+[
+	object,
+	uuid(2BD41F4F-D619-46FC-92DF-A3A393B62C51),
+	dual,
+	nonextensible,
+	helpstring("IAveHtmlDesktop Interface"),
+	pointer_default(unique)
+]
+interface IAveHtmlDesktop : IDispatch{
+	[id(1), helpstring("method Set")] HRESULT Set([in] BSTR urlOrFile);
+	[propget, id(2), helpstring("property IsActive")] HRESULT IsActive([out, retval] VARIANT_BOOL* pVal);
+};
+[
+	object,
+	uuid(4F0B462B-6EFD-493B-83AD-8E8AE0D3D117),
+	helpstring("IAveHtmlBackgroundMenuHandler Interface"),
+	pointer_default(unique)
+]
+interface IAveHtmlBackgroundMenuHandler : IUnknown{
+};
+[
+	uuid(7BFC94E6-F3EE-4C9E-8B8C-E828B9839415),
+	version(1.0),
+	helpstring("AveActiveDesktop 1.0 Type Library")
+]
+library AveActiveDesktopLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(C3E638A6-4610-4029-99CC-04353C212FC1),
+		helpstring("AveActiveDesktopHost Class")
+	]
+	coclass AveActiveDesktopHost
+	{
+		[default] interface IAveActiveDesktopHost;
+	};
+	
+	[
+		uuid(B4BEE677-4019-4979-A0D9-A23A249FEAC8),
+		helpstring("AxWinHostWindowAggregator Class")
+	]
+	coclass AxWinHostWindowAggregator
+	{
+		[default] interface IAxWinHostWindowAggregator;
+	};
+	[
+		uuid(990825CC-3C93-4E11-8E44-EBA73238FCD1),
+		helpstring("AveHtmlDesktop Class")
+	]
+	coclass AveHtmlDesktop
+	{
+		[default] interface IAveHtmlDesktop;
+	};
+	[
+		uuid(96A2B6AE-9E00-4708-8B2A-5694F4C2E45E),
+		helpstring("AveHtmlBackgroundMenuHandler Class")
+	]
+	coclass AveHtmlBackgroundMenuHandler
+	{
+		[default] interface IAveHtmlBackgroundMenuHandler;
+	};
+};

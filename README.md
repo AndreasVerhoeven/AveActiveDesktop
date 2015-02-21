@@ -27,7 +27,3 @@ HOW TO UNINSTALL?
 1. Run unregister.bat
 2. Reboot (or, restart explorer.exe manually)
 
-
-WHERE IS THE SOURCE?
-====================
-Will be available soon, cleaning it up a bit to be more modern.

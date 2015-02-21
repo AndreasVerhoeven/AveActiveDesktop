@@ -1,0 +1,27 @@
+HKCR
+{
+	AveActiveDesktop.AveHtmlDesktop.1 = s 'AveHtmlDesktop Class'
+	{
+		CLSID = s '{990825CC-3C93-4E11-8E44-EBA73238FCD1}'
+	}
+	AveActiveDesktop.AveHtmlDesktop = s 'AveHtmlDesktop Class'
+	{
+		CLSID = s '{990825CC-3C93-4E11-8E44-EBA73238FCD1}'
+		CurVer = s 'AveActiveDesktop.AveHtmlDesktop.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {990825CC-3C93-4E11-8E44-EBA73238FCD1} = s 'AveHtmlDesktop Class'
+		{
+			ProgID = s 'AveActiveDesktop.AveHtmlDesktop.1'
+			VersionIndependentProgID = s 'AveActiveDesktop.AveHtmlDesktop'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{7BFC94E6-F3EE-4C9E-8B8C-E828B9839415}'
+		}
+	}
+}

@@ -1,0 +1,43 @@
+HKCR
+{
+	AveActiveDesktop.AveHtmlBackgroundMen.1 = s 'AveHtmlBackgroundMenuHandler Class'
+	{
+		CLSID = s '{96A2B6AE-9E00-4708-8B2A-5694F4C2E45E}'
+	}
+	AveActiveDesktop.AveHtmlBackgroundMenuH = s 'AveHtmlBackgroundMenuHandler Class'
+	{
+		CLSID = s '{96A2B6AE-9E00-4708-8B2A-5694F4C2E45E}'
+		CurVer = s 'AveActiveDesktop.AveHtmlBackgroundMen.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {96A2B6AE-9E00-4708-8B2A-5694F4C2E45E} = s 'AveHtmlBackgroundMenuHandler Class'
+		{
+			ProgID = s 'AveActiveDesktop.AveHtmlBackgroundMen.1'
+			VersionIndependentProgID = s 'AveActiveDesktop.AveHtmlBackgroundMenuH'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{7BFC94E6-F3EE-4C9E-8B8C-E828B9839415}'
+		}
+	}
+}
+
+HKCR
+{
+  NoRemove Directory
+  {
+	NoRemove BackGround
+	{
+		NoRemove ShellEx
+		{
+			NoRemove ContextMenuHandlers
+			{
+				ForceRemove AveActiveDesktopShellMenu = s '{96A2B6AE-9E00-4708-8B2A-5694F4C2E45E}'
+			}
+		}
+	  }
+	}
+}

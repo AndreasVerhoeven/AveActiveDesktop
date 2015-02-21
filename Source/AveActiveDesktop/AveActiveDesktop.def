@@ -1,0 +1,9 @@
+; AveActiveDesktop.def : Declares the module parameters.
+
+LIBRARY      "AveActiveDesktop.DLL"
+
+EXPORTS
+	DllCanUnloadNow		PRIVATE
+	DllGetClassObject	PRIVATE
+	DllRegisterServer	PRIVATE
+	DllUnregisterServer	PRIVATE

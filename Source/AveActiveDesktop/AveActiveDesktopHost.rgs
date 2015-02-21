@@ -1,0 +1,26 @@
+HKCR
+{
+	AveActiveDesktop.AveActiveDesktopHost.1 = s 'AveActiveDesktopHost Class'
+	{
+		CLSID = s '{C3E638A6-4610-4029-99CC-04353C212FC1}'
+	}
+	AveActiveDesktop.AveActiveDesktopHost = s 'AveActiveDesktopHost Class'
+	{
+		CLSID = s '{C3E638A6-4610-4029-99CC-04353C212FC1}'
+		CurVer = s 'AveActiveDesktop.AveActiveDesktopHost.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {C3E638A6-4610-4029-99CC-04353C212FC1} = s 'AveActiveDesktopHost Class'
+		{
+			ProgID = s 'AveActiveDesktop.AveActiveDesktopHost.1'
+			VersionIndependentProgID = s 'AveActiveDesktop.AveActiveDesktopHost'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{7BFC94E6-F3EE-4C9E-8B8C-E828B9839415}'
+		}
+	}
+}

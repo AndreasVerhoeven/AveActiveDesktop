@@ -1,0 +1,27 @@
+HKCR
+{
+	AveActiveDesktop.AxWinHostWindowAggre.1 = s 'AxWinHostWindowAggregator Class'
+	{
+		CLSID = s '{B4BEE677-4019-4979-A0D9-A23A249FEAC8}'
+	}
+	AveActiveDesktop.AxWinHostWindowAggrega = s 'AxWinHostWindowAggregator Class'
+	{
+		CLSID = s '{B4BEE677-4019-4979-A0D9-A23A249FEAC8}'
+		CurVer = s 'AveActiveDesktop.AxWinHostWindowAggre.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {B4BEE677-4019-4979-A0D9-A23A249FEAC8} = s 'AxWinHostWindowAggregator Class'
+		{
+			ProgID = s 'AveActiveDesktop.AxWinHostWindowAggre.1'
+			VersionIndependentProgID = s 'AveActiveDesktop.AxWinHostWindowAggrega'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{7BFC94E6-F3EE-4C9E-8B8C-E828B9839415}'
+		}
+	}
+}
